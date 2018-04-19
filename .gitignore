@@ -2,3 +2,4 @@ cms
 conf/app.conf
 .idea
 main
+vendor

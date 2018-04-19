@@ -2,6 +2,7 @@ package backend
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 )
 
 type AdminController struct {
@@ -19,6 +20,11 @@ func (c *AdminController)Logout(){
 }
 
 func (c *AdminController)Index(){
+
+	logs.SetLogger("console")
+	l := logs.GetLogger()
+	l.Println(c.Ctx.Input.GetData("name"))
+
 
 }
 

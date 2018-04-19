@@ -4,11 +4,14 @@ import (
 	"github.com/astaxie/beego"
 	"cms/controllers/backend"
 	"cms/controllers"
+	"cms/filters"
 )
 
 func init() {
 
 	backendNs := beego.NewNamespace("admin",
+		//beego.NSBefore(backend.AdminController.Auth),
+		beego.NSBefore(filters.AdminAuth),
 		//登录
 		beego.NSRouter("login", &backend.AdminController{}, "post:PostLogin"),
 		//登出
