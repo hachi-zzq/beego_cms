@@ -1,3 +1,8 @@
 appname = cms
 httpport = 8080
 runmode = dev
+mysqluser = root
+mysqlpass = root
+mysqlport = 3307
+mysqlhost = 127.0.0.1
+mysqldb   = cms
