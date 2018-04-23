@@ -6,3 +6,7 @@ mysqlpass = root
 mysqlport = 3307
 mysqlhost = 127.0.0.1
 mysqldb   = cms
+
+
+##deug
+debug_admin_id = 1

@@ -3,11 +3,40 @@
 > @authro Zhengqian <zhuzhengqian@gmail.com>
 
 
-## 运行
 
-```Golang
-go build main.go
+## 依赖安装
 
-./cms
+```
+dep ensure
+
+```
+
+## 数据库配置
+
+```
+cd conf && cp app.conf.example app.conf
+
+## 应用名称
+appname = cms
+
+## 应用访问端口
+httpport = 8080
+
+## 允许模式
+runmode = dev
+
+## 数据库配置
+mysqluser = root
+mysqlpass = root
+mysqlport = 3307
+mysqlhost = 127.0.0.1
+mysqldb   = cms
+
+```
+
+## 启用
+
+```
+go run main.go
 
 ```

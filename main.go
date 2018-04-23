@@ -8,6 +8,7 @@ import (
 )
 
 func init(){
+	beego.BConfig.WebConfig.Session.SessionOn = true
 	initMysql()
 }
 
@@ -18,10 +19,11 @@ func initMysql()  {
 	mysqlHost := beego.AppConfig.String("mysqlhost")
 	mysqlDb := beego.AppConfig.String("mysqldb")
 
-	orm.RegisterDataBase("default", "mysql", mysqlUser+":"+mysqlPassword+"@tcp("+mysqlHost+":"+mysqlPort+")/"+mysqlDb+"?charset=utf8", 30)
+	orm.RegisterDataBase("default", "mysql", mysqlUser+":"+mysqlPassword+"@tcp("+mysqlHost+":"+mysqlPort+")/"+mysqlDb+"?charset=utf8&loc=Asia%2FShanghai", 30)
 }
 
 func main() {
 	beego.Run()
+
 }
 

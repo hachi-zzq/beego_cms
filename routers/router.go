@@ -23,7 +23,8 @@ func init() {
 		),
 		//用户
 		beego.NSNamespace("users",
-			beego.NSRouter("/", &backend.UserController{}, "get:Index;post:Create"),
+			beego.NSRouter("/", &backend.UserController{}, "get:Index;post:PostCreate"),
+			beego.NSRouter("/create", &backend.UserController{}, "get:Create"),
 			beego.NSRouter("/:id", &backend.UserController{}, "get:Detail;patch:Update;delete:Delete"),
 		),
 		//帖子
