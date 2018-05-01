@@ -77,7 +77,12 @@ func adminIsLogin(c *context.Context) bool {
 }
 
 func LoginAdmin(c *context.Context, adminId int) bool {
-
 	c.Input.CruSession.Set(AdminUserId, adminId)
 	return true
 }
+
+func LogoutAdmin(c *context.Context)bool{
+	c.Input.CruSession.Delete(AdminUserId)
+	return true
+}
+

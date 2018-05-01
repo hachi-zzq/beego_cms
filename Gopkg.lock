@@ -38,6 +38,12 @@
   version = "v4.2.1"
 
 [[projects]]
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "418b41d23a1bf978c06faea5313ba194650ac088"
+  version = "v0.8.7"
+
+[[projects]]
   name = "github.com/smartystreets/assertions"
   packages = [
     ".",
@@ -60,6 +66,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9b9d1afd5c49fbf212902b2f7cb776a13eea275bcf739ffb29fc6d3ab9f8def1"
+  inputs-digest = "79b61e2d690021c89336515d730f5afdbaa67a31bee30159c2a8c886b37eda62"
   solver-name = "gps-cdcl"
   solver-version = 1

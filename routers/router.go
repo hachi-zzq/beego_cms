@@ -12,10 +12,12 @@ func init() {
 	backendNs := beego.NewNamespace("admin",
 		//beego.NSBefore(backend.AdminController.Auth),
 		beego.NSBefore(filters.AdminAuth),
+		beego.NSRouter("/", &backend.AdminController{}, "get:Home"),
 		//登录
-		beego.NSRouter("login", &backend.AdminController{}, "post:PostLogin"),
+		beego.NSRouter("login", &backend.AdminController{}, "get:GetLogin;post:PostLogin"),
 		//登出
 		beego.NSRouter("logout", &backend.AdminController{}, "get:Logout"),
+		beego.NSRouter("me", &backend.AdminController{}, "get:Me;post:UpdateMe"),
 		//管理员
 		beego.NSNamespace("admins",
 			beego.NSRouter("/", &backend.AdminController{}, "get:Index;post:Create"),
@@ -26,6 +28,7 @@ func init() {
 			beego.NSRouter("/", &backend.UserController{}, "get:Index;post:PostCreate"),
 			beego.NSRouter("/create", &backend.UserController{}, "get:Create"),
 			beego.NSRouter("/:id", &backend.UserController{}, "get:Detail;patch:Update;delete:Delete"),
+			beego.NSRouter("/:id/delete", &backend.UserController{}, "get:Delete"),
 		),
 		//帖子
 		beego.NSNamespace("articles",
@@ -42,6 +45,7 @@ func init() {
 		),
 	)
 
+	beego.Router("/", &controllers.UserController{}, "get:Home")
 	beego.Router("login", &controllers.UserController{}, "post:Login")
 	beego.Router("logout", &controllers.UserController{}, "post:Logout")
 	beego.Router("register", &controllers.UserController{}, "post:Register")

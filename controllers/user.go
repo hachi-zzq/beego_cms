@@ -25,4 +25,9 @@ func (c *UserController)UserInfo(){
 
 }
 
+func (c *UserController)Home()  {
+
+	c.Ctx.WriteString("home")
+}
+
 

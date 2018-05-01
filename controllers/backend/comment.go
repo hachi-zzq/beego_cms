@@ -1,11 +1,7 @@
 package backend
 
-import (
-	"github.com/astaxie/beego"
-)
-
 type CommentController struct {
-	beego.Controller
+	BaseController
 }
 
 
